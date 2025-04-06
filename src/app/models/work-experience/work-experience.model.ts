@@ -6,4 +6,4 @@ export class WorkExperience{
 	position?: string = '';
         company?: string = '';
 	accomplishment?: string = '';
-}
+} 
