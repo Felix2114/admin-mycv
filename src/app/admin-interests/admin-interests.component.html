@@ -1,1 +1,29 @@
-<p>admin-interests works!</p>
+<div class="container color-dark">
+  <div class="col1">
+    <p>interests items</p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col3">
+    <form>
+      <input type="text" class="txt" name="work" placeholder="Interests work (develop AI)" [(ngModel)]="myInterests.work"> <br>
+      <input type="submit" class="btn" value="{{ btnTxt }}" (click)="AgregarJob()">
+    </form>
+
+    <div class="cards-wrapper">
+      <div class="card" *ngFor="let job of interests">
+        <div class="card-content">
+          <h3>Interés</h3>
+          <p>{{ job.work }}</p>
+        </div>
+        <div class="card-actions">
+          <input type="submit" class="btn" value="Update" (click)="updateJob(job.id)">
+          <input type="submit" class="btn" value="Delete" (click)="deleteJob(job.id)">
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
