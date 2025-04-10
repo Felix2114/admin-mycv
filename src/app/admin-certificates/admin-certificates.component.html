@@ -1,1 +1,33 @@
-<p>admin-certificates works!</p>
+<div class="container color-dark">
+  <div class="col1">
+    <p>certificates items</p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col3">
+    <form>
+      <input type="text" class="txt" name="certificateName" placeholder="certificate name (web)" [(ngModel)]="myCertificates.certificateName"> <br>
+      <input type="text" class="txt" name="date" placeholder="date (yyy/mm/dd)" [(ngModel)]="myCertificates.date"> <br>
+      <input type="text" class="txt" name="institution" placeholder="institution (Google)" [(ngModel)]="myCertificates.institution"> <br>
+      <input type="submit" class="btn" value="{{ btnTxt }}" (click)="AgregarJob()">
+    </form>
+
+    <div class="cards-wrapper">
+      <div class="card" *ngFor="let job of certificates">
+        <div class="card-content">
+          <h3>{{ job.certificateName }}</h3>
+          <p><strong>Fecha:</strong> {{ job.date }}</p>
+        </div>
+        <div class="card-actions">
+          <input type="submit" class="btn" value="Update" (click)="updateJob(job.id)">
+          <input type="submit" class="btn" value="Delete" (click)="deleteJob(job.id)">
+        </div>
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
