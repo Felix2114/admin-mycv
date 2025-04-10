@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 
 body {
-  background: #2E9ce6;
+  background:  #ff6c4c ;
   padding: 3em;
   font-family: 'Raleway', 'Arial';
   color: #fff;
@@ -21,10 +21,118 @@ ul li {
 
 ul li a {
   font-size: 1.5em;
+
 }
 
 a {
   color: #fff;
   text-decoration: none;
 }
+
+
+
+input[type="text"] {
+  padding: 10px 15px;
+  border: 2px solid #ff8800; 
+  border-radius: 12px;
+  background-color: #fffaf2;
+  color: #333;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(255, 136, 0, 0.1);
+}
+
+input[type="text"]:focus {
+  border-color: #ff6f00;
+  box-shadow: 0 0 8px rgba(255, 111, 0, 0.4);
+  background-color: #fff3e6;
+}
+
+input[type="button"].btn,
+input[type="submit"].btn {
+  padding: 10px 20px;
+  background-color: #fbb0a0;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(255, 136, 0, 0.2);
+}
+
+input[type="button"].btn:hover,
+input[type="submit"].btn:hover {
+  background-color: #ff6f00;
+  box-shadow: 0 6px 10px rgba(255, 111, 0, 0.3);
+}
+
+input[type="button"].btn:active,
+input[type="submit"].btn:active {
+  background-color: #e65c00;
+  transform: scale(0.98);
+}
+
+.color-light {
+  
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrapper {
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.form-actions {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #fffaf2;
+  border: 1px solid #ff8800;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(255, 136, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(255, 136, 0, 0.2);
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem;
+}
+
+.card-content p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.card-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+
+
 

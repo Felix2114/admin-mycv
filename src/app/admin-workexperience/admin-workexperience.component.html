@@ -16,11 +16,19 @@
       <input type="submit" class="btn" value="{{ btnTxt }}" (click)="AgregarJob()">
     </form>
 
-    <div class="col3" *ngFor="let job of workExperience;">
-      <input type="submit" class="btn" value="update" (click)="updateJob(job.id)">
-      <input type="submit" class="btn" value="delete" (click)="deleteJob(job.id)">
-      <p>{{job.company}} - {{job.position}}</p>
+    <div class="cards-wrapper">
+      <div class="card" *ngFor="let job of workExperience">
+        <div class="card-content">
+          <h3>{{ job.company }}</h3>
+          <p><strong>Puesto:</strong> {{ job.position }}</p>
+        </div>
+        <div class="card-actions">
+          <input type="submit" class="btn" value="Update" (click)="updateJob(job.id)">
+          <input type="submit" class="btn" value="Delete" (click)="deleteJob(job.id)">
+        </div>
+      </div>
     </div>
+    
   </div>
 </div>
 

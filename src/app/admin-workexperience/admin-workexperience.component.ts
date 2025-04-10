@@ -12,6 +12,8 @@ export class AdminWorkexperienceComponent {
   itemCount: number = 0;
   btnTxt: string = "Agregar";
   goalText: string = "";
+  isEditing: boolean = false;
+  editingId: string | null = null;
   workExperience: WorkExperience[] = [];
   myWorkExperience: WorkExperience = new WorkExperience();
 
@@ -30,22 +32,50 @@ export class AdminWorkexperienceComponent {
   }
 
   AgregarJob() {
-  console.log(this.myWorkExperience);
-  this.workExperienceService.createWorkExperience(this.myWorkExperience).then(() => {
-    console.log('Created new item successfully!');
-  });
-}
-
-deleteJob(id?: string) {
-  this.workExperienceService.deleteWorkExperience(id).then(() => {
-    console.log('delete item successfully!');
-  });
-  console.log(id);
-}
-
-updateJob(id?: string) {
- alert('updating .. ' + id);
-}
+            if (this.isEditing && this.editingId) {
+              if (confirm("¿estas seguro de actualizar el work Experience?")) {
+                this.workExperienceService.updateWorkExperience(this.editingId, this.myWorkExperience).then(() => {
+                  console.log('Item updated successfully!');
+                  this.resetForm();
+                });
+              }
+            } else {
+              if (confirm("¿estas seguro de agregar este nuevo work Experience?")) {
+                this.workExperienceService.createWorkExperience(this.myWorkExperience).then(() => {
+                  console.log('Created new item successfully!');
+                  this.resetForm();
+                });
+              }
+            }
+          }
+          
+          
+          resetForm() {
+            this.myWorkExperience = new WorkExperience();
+            this.btnTxt = "Agregar";
+            this.isEditing = false;
+            this.editingId = null;
+          }
+          
+          
+          deleteJob(id?: string) {
+            if (confirm("¿estas seguro de eliminar este work Experience?")) {
+              this.workExperienceService.deleteWorkExperience(id).then(() => {
+                console.log('Item deleted successfully!');
+              });
+              console.log(id);
+            }
+          }
+          
+          updateJob(id?: string) {
+            const certToEdit = this.workExperience.find(cert => cert.id === id);
+            if (certToEdit) {
+              this.myWorkExperience = { ...certToEdit }; 
+              this.isEditing = true;
+              this.editingId = id || null;
+              this.btnTxt = "Actualizar";
+            }
+          }
 
 
 
