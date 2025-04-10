@@ -11,6 +11,11 @@ import { AdminLanguagesComponent } from './admin-languages/admin-languages.compo
 import { AdminSkillsComponent } from './admin-skills/admin-skills.component';
 import { AdminWorkexperienceComponent } from './admin-workexperience/admin-workexperience.component';
 
+import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +29,9 @@ import { AdminWorkexperienceComponent } from './admin-workexperience/admin-worke
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]

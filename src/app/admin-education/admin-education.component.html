@@ -1,1 +1,32 @@
-<p>admin-education works!</p>
+<div class="container color-dark">
+  <div class="col1">
+    <p>education items</p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col3">
+    <form>
+      <input type="text" class="txt" name="educationLevel" placeholder="education level (basic)" [(ngModel)]="myEducation.educationLevel"> <br>
+      <input type="text" class="txt" name="nameSchool" placeholder="name school (UV)" [(ngModel)]="myEducation.nameSchool"> <br>
+      <input type="text" class="txt" name="years" placeholder="years (2011-2017)" [(ngModel)]="myEducation.years"> <br>
+      <input type="submit" class="btn" value="{{ btnTxt }}" (click)="AgregarJob()">
+    </form>
+
+    <div class="cards-wrapper">
+      <div class="card" *ngFor="let job of education">
+        <div class="card-content">
+          <h3>{{ job.educationLevel }}</h3>
+          <p><strong>Escuela:</strong> {{ job.nameSchool }}</p>
+        </div>
+        <div class="card-actions">
+          <input type="submit" class="btn" value="Update" (click)="updateJob(job.id)">
+          <input type="submit" class="btn" value="Delete" (click)="deleteJob(job.id)">
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+</div>
+

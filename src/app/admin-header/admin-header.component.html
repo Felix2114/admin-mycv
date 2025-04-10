@@ -1,1 +1,42 @@
-<p>admin-header works!</p>
+<div class="container color-dark">
+  <div class="col1">
+    <p>header items</p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col3">
+    <form>
+      <input type="text" class="txt" name="email" placeholder="email (example@live.com)" [(ngModel)]="myHeader.email"> <br>
+      <input type="text" class="txt" name="goalLife" placeholder="goal Life (develop)" [(ngModel)]="myHeader.goalLife"> <br>
+      <input type="text" class="txt" name="location" placeholder="location (in from..)" [(ngModel)]="myHeader.location"> <br>
+     
+      <input type="text" class="txt" name="name" placeholder="name (felix)" [(ngModel)]="myHeader.name"> <br>
+      <input type="text" class="txt" name="phoneNumber" placeholder="phone Number (+52...)" [(ngModel)]="myHeader.phoneNumber"> <br>
+      <input type="text" class="txt" name="photoUrl" placeholder="photo Url (https...)" [(ngModel)]="myHeader.photoUrl"> <br>
+      <input type="text" class="txt" name="socialNetwork" placeholder="social Network (@...)" [(ngModel)]="myHeader.socialNetwork"> <br>
+
+
+     <!-- <input type="submit" class="btn" value="{{ btnTxt }}" (click)="AgregarJob()"> -->
+    </form>
+
+    <div class="cards-wrapper">
+      <div class="card" *ngFor="let job of header">
+        <div class="card-content">
+          <h3>{{ job.name }}</h3>
+          <p><strong>Red:</strong> {{ job.socialNetwork }}</p>
+          <p><strong>Email:</strong> {{ job.email }}</p>
+          <p><strong>Ubicación:</strong> {{ job.location }}</p>
+        </div>
+        <div class="card-actions">
+          <input type="submit" class="btn" value="Update" (click)="updateJob(job.id)">
+          <input type="submit" class="btn" value="Delete" (click)="deleteJob(job.id)">
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</div>
+
+
